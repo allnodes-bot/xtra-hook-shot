@@ -1,6 +1,8 @@
 #!/bin/sh -lx
 
 echo "Hello $1"
+echo "Sosamba"
+
 time=$(date)
 echo "::set-output name=time::$time"
 
