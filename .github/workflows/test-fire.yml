@@ -1,0 +1,12 @@
+name: test-fire-hook
+on: workflow_dispatch
+jobs:
+  run-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test Fire hook job
+        uses: xtrakTD/xtra-hook-shot@v0.0.1
+        with:
+          data: "{\"user\":\"${{ github.actor }}\",\"branch\":\"${{ github.ref }}\",\"environment\":\"test\",\"envtype\":\"test\",\"repo\":\"${{ github.repository }}\"}"
+          url: ${{ secrets.DEPLOY_HOOK_URL }}
+          headers: "-H \"Authorization: token ${{ secrets.DEPLOY_TOKEN }}\""
