@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: xtrakTD/xtra-hook-shot@v1.0.2
+        uses: xtrakTD/xtra-hook-shot@v1.0.5
         with:
           who-to-greet: 'Mona the Octocat'
       # Use the output from the `hello` step
