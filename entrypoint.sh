@@ -1,4 +1,4 @@
-#!/bin/sh -lx
+#!/bin/sh -l
 
 echo "Hello $1"
 echo "Sosamba"
