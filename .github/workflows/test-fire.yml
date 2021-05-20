@@ -8,5 +8,5 @@ jobs:
         uses: xtrakTD/xtra-hook-shot@v0.0.4.1
         with:
           data: "{\"user\":\"${{ github.actor }}\",\"branch\":\"${{ github.ref }}\",\"environment\":\"test\",\"envtype\":\"test\",\"repo\":\"${{ github.repository }}\"}"
-          url: ${{ secrets.DEPLOY_HOOK_URL }}
+          url: "https://127.0.0.1/"
           headers: "-H \"Authorization: token ${{ secrets.DEPLOY_TOKEN }}\""
