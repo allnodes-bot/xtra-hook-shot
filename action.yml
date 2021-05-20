@@ -1,0 +1,22 @@
+name: 'XTRa-hook-shot'
+description: 'Triggers a deploy server and handles the response'
+inputs:
+  data:
+    description: 'JSON string data'
+    required: true
+    default: ''
+  url:
+    description: 'Endpoint URL'
+    required: true
+    default: ''
+  headers:
+    description: 'Optional headers'
+    required: false
+    default: ''
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.data }}
+    - ${{ inputs.url }}
+    - ${{ inputs.headers }}
