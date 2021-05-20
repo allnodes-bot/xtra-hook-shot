@@ -1,8 +1,13 @@
 #!/bin/sh -l
 
+echo "::echo::on"
+
 req="curl -s -o /dev/null -w '%{http_code}' -X POST $3 --data \"$1\" $2"
+
+echo $(req)
+
 eval $req
-#echo "::set-output name=code::$code"
+echo "::set-output name=req::$req"
 
 status_code=$(curl --write-out %{http_code} -X POST $3 --data \"$1\" --silent --output /dev/null $2)
 echo "::set-output name=status_code::$status_code"
