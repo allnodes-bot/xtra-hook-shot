@@ -2,11 +2,14 @@
 
 echo "::echo::on"
 
-req="curl -s -o /dev/null -w '%{http_code}' -X POST $3 --data \"$1\" $2"
+#req="curl -s -o /dev/null -w '%{http_code}\n' -X POST $3 --data \"$1\" $2"
+
+req="curl --write-out '%{http_code}\n' --silent --output /dev/null -X POST $3 --data \"$1\" $2"
 
 echo $req
 
 eval $req
+
 echo "::set-output name=req::$req"
 
 status_code=$(curl --write-out %{http_code} -X POST $3 --data \"$1\" --silent --output /dev/null $2)

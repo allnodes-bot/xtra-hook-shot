@@ -5,11 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Test Fire hook job
-        uses: xtrakTD/xtra-hook-shot@v0.0.4.8
+        uses: xtrakTD/xtra-hook-shot@v0.0.4.9
         id: curl
         with:
           data: "{\"user\":\"${{ github.actor }}\",\"branch\":\"${{ github.ref }}\",\"environment\":\"test\",\"envtype\":\"test\",\"repo\":\"${{ github.repository }}\"}"
-          url: https://127.0.0.1/
+          url: https://google.com
           headers: "-H \"Authorization: token 11111\""
       - name: Get the output code
         run: echo "The code was ${{ steps.curl.outputs.code }}"
