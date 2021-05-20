@@ -15,3 +15,5 @@ jobs:
         run: echo "The code was ${{ steps.curl.outputs.code }}"
       - name: Get the output code
         run: echo "The status_code was ${{ steps.curl.outputs.status_code }}"
+      - name: Get the output code
+        run: echo "The xxx was ${{ steps.curl.outputs.xxx }}"
