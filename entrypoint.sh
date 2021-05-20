@@ -4,7 +4,7 @@ echo "::echo::on"
 
 req="curl -s -o /dev/null -w '%{http_code}' -X POST $3 --data \"$1\" $2"
 
-echo $(req)
+echo $req
 
 eval $req
 echo "::set-output name=req::$req"
