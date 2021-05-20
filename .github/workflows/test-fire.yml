@@ -10,6 +10,6 @@ jobs:
         with:
           data: "{\"user\":\"${{ github.actor }}\",\"branch\":\"${{ github.ref }}\",\"environment\":\"test\",\"envtype\":\"test\",\"repo\":\"${{ github.repository }}\"}"
           url: "https://127.0.0.1/"
-          headers: "-H \"Authorization: token ${{ secrets.DEPLOY_TOKEN }}\""
+          headers: "-H \"Authorization: token 11111\""
       - name: Get the output code
         run: echo "The code was ${{ steps.curl.outputs.code }}"
