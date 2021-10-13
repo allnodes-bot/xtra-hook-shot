@@ -5,7 +5,9 @@ response_code=$(eval $req)
 
 echo "::set-output name=response_code::$response_code"
 
-if [ $response_code -ne 200 ]; then
-  echo "ERROR [$response_code]"
-  exit 1;
+if [ $4 -ne 'true' ]; then
+  if [ $response_code -ne 200 ]; then
+    echo "ERROR [$response_code]"
+    exit 1;
+  fi
 fi

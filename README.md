@@ -21,6 +21,7 @@ When triggered this action POSTs data that you pass to it to another server:
     data: "{\"user\":\"${{ github.actor }}\",\"branch\":\"${{ github.ref }}\",\"environment\":\"test\"}"
     url: ${{ secrets.DEPLOY_HOOK_URL }}
     headers: "-H \"Authorization: token ${{ secrets.DEPLOY_TOKEN }}\""
+    eval_output: "true"
 ```
 
 ### Inputs
@@ -32,6 +33,7 @@ All inputs are passed to the `curl` command with POST method.
 |  url  |  true  |  ""  |  Endpoint URL  | `"https://****"` |
 |  data  |  true  |  ""  |  Data to be posted  | `"{\"event_type\":\"build\"}"` |
 |  headers |  false  |  ""  |  Headers to be added to the request  | `-H \"Authorization: token ${{ secrets.DEPLOY_TOKEN }}\"` |
+|  eval_output  |  false  |  "true"  |  When false - job will not evaluate response code of the request  |  `eval_output: "false"` |   
 
 
 With the inputs above, the action will invoke the following command:

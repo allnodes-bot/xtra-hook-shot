@@ -13,6 +13,10 @@ inputs:
     description: 'Optional headers'
     required: false
     default: ''
+  eval_output:
+    description: 'When false - job will not evaluate response code of the request'
+    required: false
+    default: 'true'
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -20,6 +24,7 @@ runs:
     - ${{ inputs.data }}
     - ${{ inputs.url }}
     - ${{ inputs.headers }}
+    - ${{ inputs.eval_output }}
 branding:
   icon: 'cloud-lightning'
   color: 'blue'
