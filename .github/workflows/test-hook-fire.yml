@@ -10,3 +10,4 @@ jobs:
           data: "{\"user\":\"${{ github.actor }}\",\"branch\":\"${{ github.ref }}\",\"environment\":\"test\",\"envtype\":\"test\",\"repo\":\"${{ github.repository }}\"}"
           url: ${{ secrets.DEPLOY_HOOK_URL }}
           headers: "-H \"Authorization: token ${{ secrets.DEPLOY_TOKEN }}\""
+          eval_output: "false"
